@@ -19,6 +19,7 @@ steps_interval <- data %>% group_by(interval) %>% na.omit() %>% summarise(msteps
 g <- ggplot(steps_interval, aes(x = interval, y = msteps))
 g + geom_line() + labs(x = "Intervals" , y = "Average Steps")
 
+## The maximum number of steps is in this interval
 indice <- which.max(steps_interval$msteps)
 steps_interval$interval[indice]
 
