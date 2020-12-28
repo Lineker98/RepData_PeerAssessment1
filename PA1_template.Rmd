@@ -64,9 +64,9 @@ sum(is.na(data))
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 ```{r}
-## here we'll fill up the NAs with the man by 5-minute interval.
+## here we'll fill up the NAs with the mean by 5-minute interval.
 ## First we create a function will receive each group of steps by interval and replace the
-## NAs with the mean, and set to a new dataframe called new_data
+## NAs with the mean and set to a new dataframe called new_data
 
 my_replace <- function(x){
     replace(x, is.na(x), mean(x, na.rm = TRUE))
